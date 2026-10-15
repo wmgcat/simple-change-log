@@ -7,11 +7,17 @@
     "dev": "tsx index.tsx",
     "example": "vite -c example/vite.config.ts serve"
   },
-  "keywords": ["react", "typescript", "tailwind", "changelog"],
+  "keywords": [
+    "react",
+    "typescript",
+    "tailwind",
+    "changelog"
+  ],
   "author": "wmgcat",
   "license": "MIT",
   "type": "module",
   "dependencies": {
+    "@wmgcat/simple-change-log": "^26.10.0",
     "react": "^19.3.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.3.3",

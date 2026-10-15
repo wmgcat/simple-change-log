@@ -1,10 +1,10 @@
 import "../global.css";
 import { createRoot } from "react-dom/client";
-
-import Changelog from "..";
 import { useEffect, useState } from "react";
-import Item from "../types/item";
 import { BiCheck } from "react-icons/bi";
+
+import Changelog from "@wmgcat/simple-change-log";
+import Item from "@wmgcat/simple-change-log/types/item";
 
 const app: HTMLElement | null = document.getElementById("app");
 if (!app)
