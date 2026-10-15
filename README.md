@@ -1,6 +1,10 @@
 # Simple changelog
 Simple react changelog component 
 
+```sh 
+npm i @wmgcat/simple-change-log
+```
+
 ## Run example
 ```sh
 npm run example
