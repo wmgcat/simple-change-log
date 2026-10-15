@@ -1,6 +1,6 @@
 {
   "name": "@wmgcat/simple-change-log",
-  "version": "26.10.0",
+  "version": "26.10.1",
   "description": "Simple react changelog component",
   "main": "index.tsx",
   "scripts": {
