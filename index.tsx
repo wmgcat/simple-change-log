@@ -1,60 +1,61 @@
-import Item from "./src/item";
+import "./global.css";
+import type ChangelogProps from "./types";
+import type Item from "./types/item";
 
 /**
  * Simple changelog component
  *
  * @example
- * <Changelog />
+ * <Changelog 
+ *	items={[
+ *		{
+ *			label: "Hello world",
+ *			date: "15.10.2026"
+ *		},
+ *		{
+ *			label: "Hello world",
+ *			date: "15.10.2026",
+ *			icon: <BiCheck />
+ *		},
+ *		{
+ *			label: "Completed!",
+ *			date: "15.10.2026",
+ *			complete: true
+ *		}
+ *	]}
+ * />
 */
-const Changelog: React.FC<{
-	/** Classnames for component */
-	classNames?: {
-		/** Item */
-		item?: string;
-		/** Only date */
-		date?: string;
-		/** Only label */
-		label?: string;
-		/** Changelog data */
-		content?: string;
-		/* Root */
-		root?: string;
-		/** Changelog dot */
-		dot?: string;
-		/** Extra */
-		extra?: string;
-	};
-	/** Changelog's items */
-	items: Item[];
-	/** Extra */
-	children?: React.ReactNode;
-}> = ({
+const Changelog: React.FC<ChangelogProps> = ({
 	classNames,
 	items,
 	children
 }) => (
-	<div className={classNames?.root}>
-		<div className={classNames?.content}>
+	<div className={`flex flex-col items-center gap-10 ${classNames?.root || ""}`}>
+		<div className={`flex flex-col ${classNames?.content || ""}`}>
 			{items?.map?.((item: Item, i: number) => (
 				<div 
 					key={`changelog-item-${i}`}
-					className={classNames?.item}
+					className={`group flex gap-8 items-center ${classNames?.item || ""}`}
 				>
-					<div className={classNames?.date}>
+					<div className={`text-nowrap opacity-50 flex justify-end items-center ${classNames?.date || ""}`}>
 						{item?.date}
 					</div>
-					<div className={classNames?.dot}>
-
+					<div className={`transition-colors relative h-14 group-first:h-24 group-last:h-24 w-0.5 bg-black flex justify-center items-center ${item?.complete && "bg-emerald-500 text-emerald-500" || ""} ${(item?.complete ? classNames?.lineComplete : classNames?.line) || ""}`}>
+						{item?.icon && item?.icon || (
+							<div className={`transition-colors absolute border-2 border-white w-4 h-4 rounded-full bg-black ${item?.complete && "bg-emerald-500" || ""} ${(item?.complete ? classNames?.dotComplete : classNames?.dot) || ""}`} />
+						)}
 					</div>
-					<div className={classNames?.label}>
+					<div className={`transition-colors ${item?.complete && "text-emerald-500" || ""} ${classNames?.label || ""}`}>
 						{item?.label}
 					</div>
 				</div>
 			))}
 		</div>
-		<div className={classNames?.extra}>
-			{children}
-		</div>
+		{!!children && (
+			<div className={`w-75 max-w-full ${classNames?.extra || ""}`}>
+				{children}
+			</div>
+		)}
 	</div>
 );
 
