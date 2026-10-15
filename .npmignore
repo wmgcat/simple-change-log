@@ -1,0 +1,7 @@
+.git/
+node_modules/
+.gitignore
+example/
+README.md
+pnpm-lock.yaml
+pnpm-workspace.yaml
