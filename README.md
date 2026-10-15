@@ -1,5 +1,5 @@
 # Simple changelog
-Simple react changelog component
+Simple react changelog component 
 
 ## Run example
 ```sh
@@ -56,3 +56,7 @@ import Changelog from "wmgcat/simple-change-log";
   ]}
 />
 ```
+
+## Links
+- [My website](https://wmgcat.net)
+- https://roadmap.sh/projects/changelog-component
