@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # Simple changelog
 Simple react changelog component 
 
